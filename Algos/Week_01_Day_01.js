@@ -42,4 +42,3 @@ const bubbleSort2 = (nums) => {return nums.sort(function(a,b){return a-b})}
 const numsRandomOrder = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8];
 // console.log(bubbleSort(numsRandomOrder));
 console.log(bubbleSort2(numsRandomOrder));
-
