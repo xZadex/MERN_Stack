@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.tab:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.content-container{
+    height: 10em;
+}
