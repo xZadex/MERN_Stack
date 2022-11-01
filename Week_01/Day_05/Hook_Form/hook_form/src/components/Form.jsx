@@ -48,7 +48,7 @@ const Form = (props) => {
         <form>
             <div>
                 <label>First Name: </label> 
-                <input type="text" onChange={ (e) => {setFirst(e.target.value)}}/>
+                <input type="text" onChange={ (e) => setFirst(e.target.value) }/>
             </div>
             {firstValidation()}
             <div>
@@ -65,7 +65,7 @@ const Form = (props) => {
                 <label>Password: </label>
                 <input type="text" onChange={ (e) => setPassword(e.target.value) }/>
             </div>
-            {passValidation()}
+            {passValidation()}<br/>
             {passConfirmValidation()}
             <div>
                 <label>Confirm Password: </label>
