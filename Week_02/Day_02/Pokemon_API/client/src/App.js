@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className="App">
-      <Button pokemon={pokemon} setPokemon={setPokemon}/>
+      <Button setPokemon={setPokemon}/>
       <ul>
         {
           pokemon.map((poke, i) => <li key={i}>{poke.name}</li>)
