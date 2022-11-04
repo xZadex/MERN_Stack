@@ -2,15 +2,17 @@ import React from 'react'
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router";
 
 const People = (props) => {
-    const {content, setContent, current} = props;
+    const {content, setContent} = props;
+    const { id } = useParams();
     const navigate = useNavigate();
     useEffect(() => {
-        axios.get(`https://swapi.dev/api/${current.current}/${current.id}`)
+        axios.get(`https://swapi.dev/api/people/${id}`)
             .then(response => setContent({...response.data}))
-            .catch(error => navigate("/"))
-        }, [current,navigate,setContent]);
+            .catch(error => navigate("/errorpage"))
+        }, [navigate,setContent,id]);
     return (
         <div className='text-light mt-5'>
             <h1>{content.name}</h1>
