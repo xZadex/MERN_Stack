@@ -1,0 +1,34 @@
+"forms": [
+        {
+            "name": "pikachu",
+            "url": "https://pokeapi.co/api/v2/pokemon-form/25/"
+        }
+    ],
+	
+"forms": [
+        {
+            "name": "voltorb",
+            "url": "https://pokeapi.co/api/v2/pokemon-form/100/"
+        }
+    ],
+	
+"forms": [
+        {
+            "name": "butterfree",
+            "url": "https://pokeapi.co/api/v2/pokemon-form/12/"
+        }
+    ],
+	
+"forms": [
+		{
+			"name": "bellsprout",
+			"url": "https://pokeapi.co/api/v2/pokemon-form/69/"
+		}
+    ],
+
+"forms": [
+        {
+            "name": "golbat",
+            "url": "https://pokeapi.co/api/v2/pokemon-form/42/"
+        }
+    ],
