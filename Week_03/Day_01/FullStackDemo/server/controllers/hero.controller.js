@@ -2,7 +2,7 @@ const Hero = require("../models/hero.model");
 
 module.exports.getAll = (req, res) => {
     Hero.find()
-        .then(heros => res.json({ heros: heros }))
+        .then(heroes => res.json({ heroes: heroes }))
         .catch(err => res.json({ message: "Something went wrong", error: err }));
 };
 

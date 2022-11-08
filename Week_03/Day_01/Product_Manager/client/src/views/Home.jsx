@@ -1,12 +1,11 @@
 import React,{useState} from 'react'
 import axios from 'axios'
+import ProductList from '../components/ProductList';
 
 const Home = () => {
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
-    
-
 
     const newProduct = (e) => {
         e.preventDefault();
@@ -42,8 +41,11 @@ const Home = () => {
                 </div>
             </form>
             <div className='line'></div>
-            <div>
-
+            <div className='container d-flex flex-column justify-content-center align-items-center mt-3'>
+                <h1>All Products</h1>
+                <div>
+                    <ProductList/>
+                </div>
             </div>
         </div>
     )
