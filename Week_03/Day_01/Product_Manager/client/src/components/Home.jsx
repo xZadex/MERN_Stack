@@ -5,6 +5,8 @@ const Home = () => {
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
+    
+
 
     const newProduct = (e) => {
         e.preventDefault();
@@ -39,6 +41,10 @@ const Home = () => {
                     </div>
                 </div>
             </form>
+            <div className='line'></div>
+            <div>
+
+            </div>
         </div>
     )
 }
