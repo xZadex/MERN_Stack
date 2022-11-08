@@ -16,8 +16,8 @@ const ShowProduct = () => {
     return (
         <div className='container d-flex flex-column justify-content-center align-items-center mt-5'>
             <h1>{product.title}</h1>
-            <p>Price: ${product.price}</p>
-            <p>Description: {product.description}</p>
+            <p><strong>Price:</strong> ${product.price}</p>
+            <p><strong>Description:</strong> {product.description}</p>
         </div>
     )
 
