@@ -2,21 +2,20 @@ import React,{useState} from 'react'
 import axios from 'axios'
 import ProductList from '../components/ProductList';
 
-const Home = () => {
-    const [title, setTitle] = useState("");
-    const [price, setPrice] = useState("");
-    const [description, setDescription] = useState("");
+const Home = (props) => {
+    const{products, setProducts, deleteItem} = props;
+    const [formInfo, setFormInfo] = useState({
+        title:'',
+        price:'',
+        description:''
+    })
 
     const newProduct = (e) => {
-        e.preventDefault();
-        axios.post("http://localhost:8000/api/product/new", {
-            title,
-            price,
-            description
-        })
-            .then(res => console.log(res))
+        axios.post("http://localhost:8000/api/product/new", formInfo)
+            .then(res => setProducts([...products,formInfo]))
             .catch(err => console.log("Ran into error"))
     }
+
 
     return (
         <div>
@@ -25,15 +24,15 @@ const Home = () => {
                 <div className='d-flex flex-column gap-3'>
                     <div className='d-flex form-group justify-content-center align-items-center gap-2'>
                         <label>Title</label>
-                        <input type="text" className='form-control' onChange={(e)=>{setTitle(e.target.value)}}/>
+                        <input type="text" className='form-control' onChange={(e)=>{setFormInfo({...formInfo,title:e.target.value})}}/>
                     </div>
                     <div className='d-flex form-group justify-content-center align-items-center gap-2'>
                         <label>Price</label>
-                        <input type="text" className='form-control' onChange={(e)=>{setPrice(e.target.value)}}/>
+                        <input type="text" className='form-control' onChange={(e)=>{setFormInfo({...formInfo,price:e.target.value})}}/>
                     </div>
                     <div className='d-flex form-group justify-content-center align-items-center gap-2'>
                         <label>Description</label>
-                        <input type="text" className='form-control' onChange={(e)=>{setDescription(e.target.value)}}/>
+                        <input type="text" className='form-control' onChange={(e)=>{setFormInfo({...formInfo,description:e.target.value})}}/>
                     </div>
                     <div className='d-flex justify-content-center align-items-center'>
                         <button type="submit" className='btn btn-outline-dark px-5 mt-3'>Submit</button>
@@ -44,7 +43,7 @@ const Home = () => {
             <div className='container d-flex flex-column justify-content-center align-items-center mt-3'>
                 <h1>All Products</h1>
                 <div>
-                    <ProductList/>
+                    <ProductList products={products} setProducts={setProducts} deleteItem={deleteItem}/>
                 </div>
             </div>
         </div>
