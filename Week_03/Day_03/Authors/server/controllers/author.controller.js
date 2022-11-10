@@ -15,13 +15,13 @@ module.exports.getOne = (req, res) => {
 module.exports.create = (req, res) => {
     Author.create(req.body)
         .then(newAuthor => res.json({authors: newAuthor}))
-        .catch(err => res.json({message: "Something went wrong", error: err}))
+        .catch(err => res.status(400).json(err))
 }
 
 module.exports.update = (req, res) => {
-    Author.findOneAndUpdate({_id: req.params.id}, req.body, {new: true})
+    Author.findOneAndUpdate({_id: req.params.id}, req.body, {new: true, runValidators: true} )
         .then(updatedAuthor => res.json({authors: updatedAuthor}))
-        .catch(err => res.json({message: "Something went wrong", error: err}))
+        .catch(err => res.status(400).json(err))
 }
 
 module.exports.delete = (req, res) => {
