@@ -30,17 +30,17 @@ const S5 = "a#cb##b";
 const T5 = "b";
 const expected5 = false;
 // Explanation: S becomes "c" while T becomes "b".
-    
+
 function backspaceStringCompare(S, T) {
     let arr01 = []
     let arr02 = []
 
     for(let i=0;i<S.length;i++){
-        S[i] === "#" ? arr01 = arr01.slice(0, -1) : arr01+=S[i];
+        S[i] === "#" ? arr01.pop() : arr01.push(S[i]);
     }
 
     for(let j=0;j<T.length;j++){
-        T[i] === "#" && T[i] ? arr02 = arr02.slice(0, -1) : arr02+=T[i]
+        T[j] === "#" && T[j] ? arr02.pop() : arr02.push(T[j]);
     }
 
     return arr01.join() === arr02.join()
